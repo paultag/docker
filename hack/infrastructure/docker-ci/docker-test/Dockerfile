@@ -1,6 +1,6 @@
-# VERSION:        0.3
-# DOCKER-VERSION  0.6.3
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
+# VERSION:        0.4
+# DOCKER-VERSION  0.6.5
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
 # REFERENCES:     This code reuses the excellent implementation of
 #                 Docker in Docker made by Jerome Petazzoni.
@@ -17,11 +17,7 @@
 from docker
 maintainer Daniel Mizyrycki <daniel@dotcloud.com>
 
-#### FIXME. Temporarily install docker and dind with proper apparmor handling
-run wget -q -O /go/src/github.com/dotcloud/docker/hack/dind http://raw.github.com/jpetazzo/docker/escape-apparmor-confinement/hack/dind
-run chmod +x /go/src/github.com/dotcloud/docker/hack/dind
-
-# Setup go to the PATH. Extracted from /Dockerfile
+# Setup go in PATH. Extracted from /Dockerfile
 env PATH /usr/local/go/bin:$PATH
 
 # Add test_docker.sh
